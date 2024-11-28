@@ -54,6 +54,8 @@ public class TaskServiceImpl implements TaskService {
         task.setDate(taskDto.getDate());
         task.setDuration(taskDto.getDuration());
         task.setAppraisalStatus(taskDto.getAppraisalStatus());
+        task.setNumberOfRatings(taskDto.getNumberOfRatings());
+        task.setRatings(taskDto.getRatings());
         Task createdTask = taskRepository.save(task);
         taskRepository.mapTaskIdWithEmployeeId(createdTask.getId(), employeeId);
         taskRepository.mapTaskIdWithProjectId(createdTask.getId(), taskDto.getProjectId());
